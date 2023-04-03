@@ -1,15 +1,18 @@
 #!/usr/bin/env python3
 
 """
-Using Flask-Babel to demonstrate internationalization
+Basic Flask app
 """
 
 from flask import Flask, render_template
+
+
 app = Flask(__name__)
+app.url_map.strict_slashes = False
 
 
 @app.route('/')
-def index():
+def index() -> str:
     """Return a string"""
     return render_template('0-index.html')
 
